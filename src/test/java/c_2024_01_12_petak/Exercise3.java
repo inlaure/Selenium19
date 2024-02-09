@@ -1,4 +1,4 @@
-package c_2024_01_12_petak.Zadatak3;
+package c_2024_01_12_petak;
 //
 //import io.github.bonigarcia.wdm.WebDriverManager;
 //import org.openqa.selenium.By;
@@ -30,7 +30,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Zadatak3 {
+public class Exercise3 {
     public static void main(String[] args) {
 
         //Zadatak 3

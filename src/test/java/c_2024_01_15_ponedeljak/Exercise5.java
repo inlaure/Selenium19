@@ -7,10 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class Zadatak5 {
+public class Exercise5 {
     public static void main(String[] args) {
         // Zadatak 5
         // Testirati log in stranice: https://practicetestautomation.com/
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -34,7 +35,7 @@ public class Zadatak5 {
         WebElement submitBtn = driver.findElement(By.id("submit"));
         submitBtn.click();
 
-        //-----------------Asertacije
+        //-----------------Assertions
 
         String expectedURL = "https://practicetestautomation.com/logged-in-successfully/";
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL);

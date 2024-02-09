@@ -1,4 +1,4 @@
-package c_2024_01_12_petak.Zadatak2;
+package c_2024_01_12_petak;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 
-public class Zadatak2 {
+public class Exercise2 {
     public static void main(String[] args) {
 
         //Zadatak 2
@@ -16,7 +16,7 @@ public class Zadatak2 {
         //Zatvoriti sve tabove osim onog gde je otvoren Google
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver(); //Otvoren prvi tab
+        WebDriver driver = new ChromeDriver(); //First tab is opened
         driver.manage().window().maximize();
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -26,7 +26,7 @@ public class Zadatak2 {
         js.executeScript("window.open()");
         js.executeScript("window.open()");*/
 
-        //Otvaramo 5 praznih tabova
+        //5 new tabs are opened
         for (int i = 0; i < 5; i++) {
             js.executeScript("window.open()");
         }
@@ -51,12 +51,8 @@ public class Zadatak2 {
         driver.switchTo().window(listaTabova.get(5));
         driver.get("https://www.youtube.com/");
 
-        /*for (int i = 5; i > 0; i--) {
-            driver.switchTo().window(listaTabova.get(i));
-            driver.close();
-        }*/
 
-        //Kroz petlju zatvaramo sve tabove koji nemaju za URL Google link
+        //Tabs that do not have Google URL link are closed
         for (int i = 0; i < listaTabova.size(); i++) {
             driver.switchTo().window(listaTabova.get(i));
             if (!driver.getCurrentUrl().equals("https://www.google.com/")) {

@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class Zadatak4 {
+public class Exercise4 {
     public static void main(String[] args) {
 
         //Zadatak 4
@@ -29,7 +29,7 @@ public class Zadatak4 {
         List<WebElement> searchButton = driver.findElements(By.name("btnK"));
         searchButton.get(1).click();
 
-        // Pogresan nacin
+        // Incorrect use of locator
         //WebElement wikipediaLink = driver.findElement(By.className("LC20lb MBeuO DKV0Md"));
 
         WebElement wikipediaLink = driver.findElement(By.cssSelector(".LC20lb.MBeuO.DKV0Md"));
@@ -40,23 +40,22 @@ public class Zadatak4 {
 
         wikipediaSearch.sendKeys("Nikola Tesla");
 
-        //WebElement wikipediaButton = driver.findElement(By.cssSelector(".pure-button.pure-button-primary-progressive"));
         WebElement wikipediaButton = driver.findElement(By.cssSelector("button[type='submit']"));
         wikipediaButton.click();
 
 //--------------------------------
 
-        // Testovi nemaju smisla ako se ne vrsi nikakva provera
-        // Razlika izmedju testa i programa koji izvrsava neku akciju su provere, odnosno asertacije
-        // Da bismo radili asertacije prvo nam je potrebno da ubacimo TestNG biblioteku u pom fajl
+        //Tests have no use if assertion is not used
+        //The difference between tests and programmes are assertions
+        //In order to execute assertion, TestNG file needs to be added to POM
 
-        // Testiramo da li je validan URL
+        // Testing if URL is correct
         String expectedURL = "https://en.wikipedia.org/wiki/Nikola_Tesla";
 
-        //Kada koristimo assertEquals - sa leve strane je REALAN rezultat, sa desne strane je OCEKIVAN rezultat
+        //When assertEquals is used, on the left side we write the actual result, on the right one - the expected
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
 
-        // Testiramo da li je naslov stranice "Nikola Tesla"
+        //Testing if the title is "Nikola Tesla"
         WebElement pageTitle = driver.findElement(By.className("mw-page-title-main"));
         String pageTitleText = pageTitle.getText();
 
@@ -64,7 +63,7 @@ public class Zadatak4 {
 
         Assert.assertEquals(pageTitleText, expectedTitle);
 
-        // Testiramo da li postoji slika na stranici
+        //Testing if there's a picture on website
         WebElement pageImage = driver.findElement(By.className("infobox-image"));
 
         Assert.assertTrue(pageImage.isDisplayed());

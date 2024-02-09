@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class Zadatak6 {
+public class Exercise6 {
     public static void main(String[] args) {
 // Zadatak 6
 // Testirati log out funkcionalnost

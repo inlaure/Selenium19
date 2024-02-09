@@ -29,7 +29,7 @@ public class Exercise4 {
         List<WebElement> searchButton = driver.findElements(By.name("btnK"));
         searchButton.get(1).click();
 
-        // Incorrect use of locator
+        //Example of incorrect use of locator
         //WebElement wikipediaLink = driver.findElement(By.className("LC20lb MBeuO DKV0Md"));
 
         WebElement wikipediaLink = driver.findElement(By.cssSelector(".LC20lb.MBeuO.DKV0Md"));
@@ -49,13 +49,13 @@ public class Exercise4 {
         //The difference between tests and programmes are assertions
         //In order to execute assertion, TestNG file needs to be added to POM
 
-        // Testing if URL is correct
+        //Defining the correct URL
         String expectedURL = "https://en.wikipedia.org/wiki/Nikola_Tesla";
 
         //When assertEquals is used, on the left side we write the actual result, on the right one - the expected
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
 
-        //Testing if the title is "Nikola Tesla"
+        //Verifying that the title is "Nikola Tesla"
         WebElement pageTitle = driver.findElement(By.className("mw-page-title-main"));
         String pageTitleText = pageTitle.getText();
 
@@ -63,7 +63,7 @@ public class Exercise4 {
 
         Assert.assertEquals(pageTitleText, expectedTitle);
 
-        //Testing if there's a picture on website
+        //Verifying that there's a picture on website
         WebElement pageImage = driver.findElement(By.className("infobox-image"));
 
         Assert.assertTrue(pageImage.isDisplayed());

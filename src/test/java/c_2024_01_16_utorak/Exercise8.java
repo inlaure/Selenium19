@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class Zadatak8 {
+public class Exercise8 {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
